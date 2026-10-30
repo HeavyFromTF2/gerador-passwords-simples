@@ -1,0 +1,88 @@
+/* Cores definidas num só sítio. Muda aqui para mudar o tema. */
+:root {
+  --fundo: #f3f6f4;
+  --cartao: #ffffff;
+  --texto: #14231c;
+  --suave: #5d6f66;
+  --destaque: #0f7a4f;
+  --linha: #d5dfd9;
+}
+
+/* Tema escuro automático, conforme o sistema da pessoa */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fundo: #0e1713;
+    --cartao: #16241d;
+    --texto: #e6f1ea;
+    --suave: #8fa598;
+    --destaque: #3ddc97;
+    --linha: #27382f;
+    color-scheme: dark;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 24px 16px;
+  display: flex;
+  justify-content: center;
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+.cartao {
+  width: 100%;
+  max-width: 440px;
+  padding: 24px;
+  background: var(--cartao);
+  border: 1px solid var(--linha);
+  border-radius: 14px;
+}
+
+h1 { margin: 0 0 16px; font-size: 1.4rem; }
+
+.resultado {
+  min-height: 56px;
+  padding: 14px;
+  border: 1px solid var(--linha);
+  border-radius: 10px;
+  font-family: Consolas, monospace;
+  font-size: 1.15rem;
+  word-break: break-all;
+}
+
+.barra {
+  height: 6px;
+  margin: 12px 0 4px;
+  background: var(--linha);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.barra div { height: 100%; background: var(--destaque); transition: width 0.2s; }
+
+.nota { margin: 0 0 16px; font-size: 0.9rem; color: var(--suave); }
+
+label { display: flex; gap: 8px; align-items: center; margin: 8px 0; }
+input[type="range"] { width: 100%; accent-color: var(--destaque); }
+
+.botoes { display: flex; gap: 8px; margin: 16px 0; }
+button {
+  flex: 1;
+  padding: 12px;
+  font-size: 1rem;
+  color: #fff;
+  background: var(--destaque);
+  border: 1px solid var(--destaque);
+  border-radius: 10px;
+  cursor: pointer;
+}
+button.secundario { background: transparent; color: var(--destaque); }
+
+/* Contorno visível para quem navega com o teclado */
+button:focus-visible, input:focus-visible {
+  outline: 3px solid var(--destaque);
+  outline-offset: 2px;
+}

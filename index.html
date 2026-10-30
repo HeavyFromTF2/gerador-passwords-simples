@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Segurança: só permite scripts e estilos do próprio site, e bloqueia pedidos para o exterior -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'self' ws:"
+    />
+    <title>Gerador de passwords</title>
+  </head>
+  <body>
+    <!-- O React desenha a aplicação toda dentro deste div -->
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
